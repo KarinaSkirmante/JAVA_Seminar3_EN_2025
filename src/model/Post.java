@@ -1,12 +1,13 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Post {
 	// variables, getters, setters, both constructors, toString + other functions(if necessary)
 	private String msg;
 	private LocalDateTime datetime;
-	private int countOfLikes;//TODO can be changed to arraylist of register users
+	private int countOfLikes = 0;//TODO can be changed to arraylist of register users
 	
 	public String getMsg() {
 		return msg;
@@ -36,7 +37,21 @@ public class Post {
 	}
 	
 	
+	public Post() {
+		setMsg("Test post");
+		setDatetime();	
+	}
 	
+	public Post(String inputMsg) {
+		setMsg(inputMsg);
+		setDatetime();
+	}
 	
+	public String toString() {
+		return msg + " (" + 
+	datetime.format(DateTimeFormatter.ISO_LOCAL_DATE) + " " + 
+				datetime.getHour() + ":" + datetime.getMinute() + ":" + datetime.getSecond() + ") "
+				+ countOfLikes;
+	}
 	
 }

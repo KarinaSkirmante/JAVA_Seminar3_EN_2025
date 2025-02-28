@@ -3,7 +3,10 @@ package model.users;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class RegisteredUser extends User {
+import model.IPostCreate;
+import model.PostType;
+
+public abstract class RegisteredUser extends User implements IPostCreate {
 	// variables, getters, setters, both constructors, toString + other functions(if necessary)
 	private String username;
 	private String password;
@@ -62,5 +65,6 @@ public class RegisteredUser extends User {
 	public String toString() {
 		return super.toString() + ": " + username + " (" + password+ ")";
 	}
+	
 
 }

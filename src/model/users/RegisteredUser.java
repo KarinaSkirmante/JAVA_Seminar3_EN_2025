@@ -46,6 +46,21 @@ public class RegisteredUser extends User {
 		}
 	}
 	
+	public RegisteredUser()
+	{
+		super();//will call User class no argument constructor
+		setUsername("test.user");
+		setPassword("1234QWerty?");
+		
+	}
+	public RegisteredUser(String inputUsername, String inputPassword) {
+		super();//will call User class no argument constructor
+		setUsername(inputUsername);
+		setPassword(inputPassword);
+	}
 	
+	public String toString() {
+		return super.toString() + ": " + username + " (" + password+ ")";
+	}
 
 }

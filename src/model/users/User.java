@@ -2,7 +2,7 @@ package model.users;
 
 public class User {
 	// variables, getters, setters, both constructors, toString + other functions(if necessary)
-	private int id;
+	protected int id;
 	
 	private static int counter = 0;
 

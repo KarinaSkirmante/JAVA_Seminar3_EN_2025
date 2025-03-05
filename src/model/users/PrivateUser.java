@@ -79,7 +79,7 @@ public class PrivateUser extends RegisteredUser {
 	@Override
 	public void createPost(PostType postType, String... params) throws Exception {
 		if(postType == null || params == null) {
-			throw new Exception("Params shoudl be not null");
+			throw new Exception("Params should be not null");
 		}
 		
 		if(params.length < 1) {

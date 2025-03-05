@@ -23,7 +23,7 @@ public class BusinessUser extends RegisteredUser{
 
 	public void setBussinesName(String inputBusinessName)
 	{
-		if(inputBusinessName != null && inputBusinessName.matches("[A-Z]{1}[a-z]{2,20}"))
+		if(inputBusinessName != null && inputBusinessName.matches("[A-Z]{1}[a-z ]{2,20}"))
 		{
 			businessName = inputBusinessName;
 		}

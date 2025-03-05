@@ -29,9 +29,8 @@ public abstract class RegisteredUser extends User implements IPostCreate {
 		}
 	}
 	
-	//TODO regex for password is from https://www.ocpsoft.org/tutorials/regular-expressions/password-regular-expression/
 	public void setPassword(String inputPassword) {
-		if(inputPassword != null && inputPassword.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\\]).{8,32}$"))
+		if(inputPassword != null && inputPassword.matches("[A-Za-z0-9?*#.:;]{6,20}"))
 		{
 			try {
 				MessageDigest md = MessageDigest.getInstance("MD5");

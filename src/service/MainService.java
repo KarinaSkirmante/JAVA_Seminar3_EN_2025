@@ -33,7 +33,17 @@ public class MainService {
 			System.out.println("Karina private posts: " + u3.getPrivatePosts());
 			System.out.println("Karina public posts: " + u3.getPublicPosts());
 			
+			u4.createPage("Microsoft in Ventspils", "Information about STEM activities in Ventspils");
+			u4.createPage("Microsoft in Riga",  "Information about STEM activities in Riga");
 			
+			u4.createPost(PostType.publicPost, "Hello in my page!",
+					"Microsoft in Ventspils", "Microsoft in Riga" );
+			
+			u4.createPost(PostType.publicPost, "20% Discount for Ventspils users",
+					"Microsoft in Ventspils");
+			
+			System.out.println("My Microsoft Ventspils page ->" + u4.getPages().get(0).getPosts());
+			System.out.println("My Microsoft Riga page ->" + u4.getPages().get(1).getPosts());
 			
 			
 		} catch (Exception e) {

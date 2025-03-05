@@ -45,6 +45,11 @@ public class MainService {
 			System.out.println("My Microsoft Ventspils page ->" + u4.getPages().get(0).getPosts());
 			System.out.println("My Microsoft Riga page ->" + u4.getPages().get(1).getPosts());
 			
+			u4.followUser("2_karina.skirmante");
+			
+			System.out.println("Karina Followers ->" + u3.getFollowers());
+			
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -55,4 +60,11 @@ public class MainService {
 
 	}
 
+	public static ArrayList<User> getAllUsers()
+	{
+		return allUsers;
+	}
+	
+	
+	
 }

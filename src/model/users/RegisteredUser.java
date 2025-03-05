@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 import model.IPostCreate;
 import model.PostType;
+import service.MainService;
 
 public abstract class RegisteredUser extends User implements IPostCreate {
 	// variables, getters, setters, both constructors, toString + other functions(if necessary)
@@ -65,5 +66,26 @@ public abstract class RegisteredUser extends User implements IPostCreate {
 		return super.toString() + ": " + username + " (" + password+ ")";
 	}
 	
-
+	public void followUser(String username) throws Exception{
+		if(username == null) {
+			throw new Exception("Username should not be null");
+		}
+		
+		for(User tempU : MainService.getAllUsers()) {
+			if(tempU instanceof RegisteredUser) {
+				RegisteredUser tempRU = (RegisteredUser)tempU;
+				if(tempRU.getUsername().equals(username))
+				{
+					if(tempRU instanceof PrivateUser) {
+						PrivateUser tempPU = (PrivateUser)tempRU;
+						tempPU.getFollowers().add(this);
+					}
+				}
+			}
+		}
+		
+	}
+	
+	
+	
 }

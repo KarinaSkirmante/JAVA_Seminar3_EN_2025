@@ -78,5 +78,27 @@ public class BusinessUser extends RegisteredUser{
 		
 		
 	}
+	
+	public void createPage(String inputTitle, String inputDescription) throws Exception {
+		if(inputTitle == null || inputDescription == null) {
+			throw new Exception("Params should be not null");
+		}
+	
+
+		for(Page tempP : pages)
+		{
+			if(tempP.getTitle().equals(inputTitle)) {
+				throw new Exception("The page already exists");
+			}
+		}
+		Page newPage = new Page(inputTitle, inputDescription);
+		pages.add(newPage);
+		
+	}
+	
+	
+	
+	
+	
 
 }
